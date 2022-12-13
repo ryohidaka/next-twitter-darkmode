@@ -9,6 +9,7 @@ export default function Home() {
 
   return (
     <div>
+      {/* User Timeline */}
       {tweets.map((tweet) => (
         <TweetEmbed key={tweet.id_str} tweet={tweet} />
       ))}
