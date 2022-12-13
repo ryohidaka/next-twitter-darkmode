@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Tweet } from "../types/tweet";
 
 /**
@@ -25,4 +25,15 @@ export const useUserTimeline = () => {
   }, []);
 
   return tweets;
+};
+
+export const useContainerRef = () => {
+  const containerRef = useRef(null); // コンポーネントのルートとなる要素を取得
+
+  useEffect(() => {
+    // @ts-ignore
+    twttr.widgets.load(containerRef.current); // ツイートの埋め込みを実行
+  }, []);
+
+  return containerRef;
 };

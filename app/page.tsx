@@ -1,6 +1,7 @@
 "use client";
 
 import { useUserTimeline } from "../hooks/tweet";
+import TweetEmbed from "./components/TweetEmbed";
 
 export default function Home() {
   // Fetch Tweets
@@ -8,11 +9,9 @@ export default function Home() {
 
   return (
     <div>
-      <ul>
-        {tweets.map((tweet) => (
-          <li key={tweet.id_str}>{tweet.text}</li>
-        ))}
-      </ul>
+      {tweets.map((tweet) => (
+        <TweetEmbed key={tweet.id_str} tweet={tweet} />
+      ))}
     </div>
   );
 }
