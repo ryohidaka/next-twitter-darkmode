@@ -8,6 +8,7 @@ import TweetContent from "./TweetContent";
 type Props = {
   tweet: Tweet;
   theme?: Theme;
+  className?: string;
 };
 
 /**
@@ -15,12 +16,12 @@ type Props = {
  * @param tweet
  * @returns
  */
-export default function TweetEmbed({ tweet, theme }: Props) {
+export default function TweetEmbed({ tweet, theme, className }: Props) {
   const ref = useContainerRef();
   const tweetId = tweet.id_str;
 
   return (
-    <div key={tweetId} id={tweetId} ref={ref}>
+    <div key={tweetId} id={tweetId} ref={ref} className={className}>
       <blockquote className="twitter-tweet" data-theme={theme}>
         <TweetContent tweet={tweet} />
       </blockquote>
