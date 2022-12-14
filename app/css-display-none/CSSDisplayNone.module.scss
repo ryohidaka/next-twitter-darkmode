@@ -1,0 +1,15 @@
+/* Color Mode */
+
+// Light Mode
+html[data-theme="light"] {
+  .tw_dark {
+    display: none;
+  }
+}
+
+// Dark Mode
+html[data-theme="dark"] {
+  .tw_light {
+    display: none;
+  }
+}
